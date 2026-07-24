@@ -21,7 +21,7 @@ export default async function ProjectsPage() {
           <h2 className="text-2xl font-bold tracking-tight">Dự án của bạn</h2>
           <p className="text-slate-500">Quản lý các không gian làm việc và thương hiệu email.</p>
         </div>
-        <Button asChild>
+        <Button>
           <Link href="/projects/new">
             <Plus className="w-4 h-4 mr-2" />
             Tạo dự án mới
@@ -34,7 +34,7 @@ export default async function ProjectsPage() {
           <div className="col-span-full p-8 text-center border rounded-lg bg-white dark:bg-slate-900 border-dashed">
             <h3 className="text-lg font-medium mb-2">Chưa có dự án nào</h3>
             <p className="text-slate-500 mb-4">Tạo dự án đầu tiên của bạn để bắt đầu gửi email.</p>
-            <Button asChild>
+            <Button>
               <Link href="/projects/new">
                 Tạo dự án mới
               </Link>
@@ -60,7 +60,7 @@ export default async function ProjectsPage() {
                       Mở
                     </Button>
                   </form>
-                  <Button variant="outline" size="icon" asChild>
+                  <Button variant="outline" size="icon">
                     <Link href={`/projects/${project.id}/settings`}>
                       <Settings className="w-4 h-4" />
                     </Link>

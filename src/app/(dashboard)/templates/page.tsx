@@ -15,7 +15,7 @@ export default async function TemplatesPage() {
           <p className="text-slate-500">Quản lý và thiết kế các mẫu email cho chiến dịch của bạn.</p>
         </div>
         <div className="flex items-center gap-2">
-          <Button asChild>
+          <Button>
             <Link href="/templates/new">
               <Plus className="w-4 h-4 mr-2" />
               Tạo mẫu mới
@@ -41,7 +41,7 @@ export default async function TemplatesPage() {
             <Mail className="mx-auto h-12 w-12 text-slate-300 mb-3" />
             <h3 className="text-lg font-medium text-slate-900">Chưa có mẫu email nào</h3>
             <p className="text-slate-500 mt-1 mb-4">Hãy tạo một mẫu email mới để bắt đầu gửi chiến dịch.</p>
-            <Button asChild>
+            <Button>
               <Link href="/templates/new">Tạo mẫu ngay</Link>
             </Button>
           </div>
@@ -63,7 +63,7 @@ export default async function TemplatesPage() {
                 <div className="flex items-center justify-between mt-auto">
                   <span className="text-xs text-slate-400">Sửa lần cuối: {template.updated_at}</span>
                   <div className="flex items-center gap-1">
-                    <Button variant="ghost" size="icon" className="h-8 w-8 text-slate-500" asChild>
+                    <Button variant="ghost" size="icon" className="h-8 w-8 text-slate-500">
                       <Link href={`/templates/${template.id}/edit`}>
                         <FileEdit className="h-4 w-4" />
                       </Link>

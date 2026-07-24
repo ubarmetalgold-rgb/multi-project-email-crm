@@ -16,7 +16,7 @@ export default async function CampaignsPage() {
           <p className="text-slate-500">Quản lý và theo dõi hiệu suất các chiến dịch gửi email của bạn.</p>
         </div>
         <div className="flex items-center gap-2">
-          <Button asChild>
+          <Button>
             <Link href="/campaigns/new">
               <Plus className="w-4 h-4 mr-2" />
               Tạo chiến dịch mới

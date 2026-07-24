@@ -30,13 +30,16 @@ export default async function ContactsPage() {
       .limit(50)
       
     if (data) {
-      contacts = data.map(item => ({
-        id: item.contacts?.id,
-        email: item.contacts?.normalized_email,
-        full_name: item.contacts?.full_name,
-        status: item.status,
-        joined_at: new Date(item.joined_at).toLocaleDateString('vi-VN')
-      }))
+      contacts = data.map(item => {
+        const c: any = Array.isArray(item.contacts) ? item.contacts[0] : item.contacts;
+        return {
+          id: c?.id,
+          email: c?.normalized_email,
+          full_name: c?.full_name,
+          status: item.status,
+          joined_at: new Date(item.joined_at).toLocaleDateString('vi-VN')
+        }
+      })
     }
   }
 
@@ -48,13 +51,13 @@ export default async function ContactsPage() {
           <p className="text-slate-500">Quản lý danh sách khách hàng trong dự án hiện tại.</p>
         </div>
         <div className="flex items-center gap-2">
-          <Button variant="outline" asChild>
+          <Button variant="outline">
             <Link href="/contacts/import">
               <UploadCloud className="w-4 h-4 mr-2" />
               Import CSV
             </Link>
           </Button>
-          <Button asChild>
+          <Button>
             <Link href="/contacts/new">
               <Plus className="w-4 h-4 mr-2" />
               Thêm mới
